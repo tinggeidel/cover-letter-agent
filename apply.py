@@ -213,10 +213,18 @@ def run(posting_path: str) -> None:
     draft = call_claude(client, implementer_prompt(knowledge, company, role), posting)
 
     print("Critique pass (checking voice, fabrication, JD coverage)…", file=sys.stderr)
-    critique = call_claude(client, auditor_prompt(knowledge, company, role, draft), "")
+    critique = call_claude(
+        client,
+        auditor_prompt(knowledge, company, role, draft),
+        "Produce the critique now, following the numbered structure.",
+    )
 
     print("Polishing…", file=sys.stderr)
-    final = call_claude(client, polisher_prompt(knowledge, company, role, draft, critique), "")
+    final = call_claude(
+        client,
+        polisher_prompt(knowledge, company, role, draft, critique),
+        "Produce the final cover letter now.",
+    )
 
     LETTERS_DIR.mkdir(exist_ok=True)
     slug = f"{date.today().isoformat()}-{slugify(company)}-{slugify(role)}"
