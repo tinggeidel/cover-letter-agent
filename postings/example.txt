@@ -1,0 +1,24 @@
+Company: ExampleCo
+Role: Forward Deployed Engineer
+
+About ExampleCo:
+ExampleCo is a Series B AI company building agents that automate back-office work for mid-market services businesses. We have 40 employees, are remote-first with an HQ in San Francisco, and our customers include three Fortune 500 companies running pilots.
+
+About the role:
+We're hiring a Forward Deployed Engineer to embed with our largest customers, learn their workflows, and ship AI agents directly into their operations. You'll be the bridge between our product team and the customer's reality — writing real code, making product calls in the customer's office, and owning the metrics that prove our product is working.
+
+What you'll do:
+- Spend the first month with a customer learning their workflow end-to-end
+- Design and ship AI agents in Python that integrate with the customer's systems
+- Own the operational metrics those agents move
+- Bring learnings back to the core product team
+
+What we're looking for:
+- 3+ years shipping production software
+- Comfort with Python and modern LLM tooling (Anthropic SDK, OpenAI SDK, LangChain, etc.)
+- Experience explaining technical decisions to non-technical operators
+- Hunger to be at the messy intersection of customer and product
+- Bonus: experience building agents in production
+- Bonus: experience in services-business operations
+
+This is an example posting for testing the cover-letter agent. Replace this file with a real job description when you're ready to apply.
