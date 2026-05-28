@@ -111,6 +111,8 @@ You will receive the job posting in the next message. Read it carefully. Then wr
 
 Hard rules:
 - Do not fabricate any claim, number, or experience not present in <resume>.
+- Do not invent any fact about {company} not present in the job posting you will receive. See the "Hard prohibition on fabrication" section of <voice>. This includes blog posts, engineering posts, customer names, product features, quotes, values, or announcements not in the JD.
+- If paragraph 3 needs a "why this company" anchor and the JD gives you no specific signal, use the company's own "About" description from the JD, or match a JD-stated responsibility to a piece of my experience. Do not invent external references.
 - Do not include any pattern listed in the "Patterns to avoid" section of <voice>.
 - Stay within 280-350 words.
 - Output the letter only. No header, no signature block, no commentary.
@@ -118,7 +120,7 @@ Hard rules:
 """
 
 
-def auditor_prompt(k: dict[str, str], company: str, role: str, draft: str) -> str:
+def auditor_prompt(k: dict[str, str], company: str, role: str, draft: str, posting: str) -> str:
     return f"""You are a brutally honest reviewer of Ting Geidel's cover letter draft.
 
 The voice principles she writes by:
@@ -133,6 +135,12 @@ Her resume (ground truth — flag any claim in the draft that exceeds it):
 {k['resume']}
 </resume>
 
+The original job posting (ground truth for any company-specific claim):
+
+<jd>
+{posting}
+</jd>
+
 Target: {role} at {company}.
 
 Here is the draft:
@@ -143,21 +151,23 @@ Here is the draft:
 
 Produce a numbered critique with these checks. For each item, quote the offending phrase from the draft and explain why it fails.
 
-1. AI-tells — any rule-of-three, rhetorical contrast, aphoristic finisher, buzzword salad, generic enthusiasm, hedge phrase, or em-dash overuse?
+1. AI-tells — any rule-of-three, rule-of-four, rhetorical contrast, aphoristic finisher, buzzword salad, generic enthusiasm, hedge phrase, or em-dash overuse?
 2. Specificity — does paragraph 2 carry a real number or named-tool detail? Could any sentence appear in another candidate's letter unchanged?
 3. JD signal coverage — what specific asks from the JD does the draft fail to address?
-4. Fabrication check — any claim in the draft that isn't in <resume>? Quote and flag.
-5. "Why them" test — does paragraph 3 reference something only someone who looked at this company could write? Or is it generic?
+4. Fabrication check — flag ANY claim about {company} that you cannot locate in the JD text or in <resume>. This includes references to blog posts, engineering posts, customer names, product features, executive quotes, stated values, or announcements. Quote each suspect phrase. The default assumption is fabrication; the draft must prove the claim is grounded.
+5. "Why them" test — does paragraph 3 reference something only someone who looked at THIS company's JD could write? Or is it generic?
 6. Closer — is the close a small offer or a generic request?
 7. Word count — count the words. Report it. Within 280-350?
 
 End with a "PRIORITY FIXES" section listing the 3-5 highest-impact changes for the polisher.
 
+CRITICAL: If a PRIORITY FIX asks the polisher to "add a real signal" or "reference something specific about the company," you must also tell the polisher WHERE to find that signal — either quote a specific line from the JD they should anchor on, or instruct them to write a shorter, JD-internal paragraph instead. Never tell the polisher to find a signal that isn't already in the context — that pushes them to fabricate.
+
 Be surgical. Quote exact phrases. Do not soften.
 """
 
 
-def polisher_prompt(k: dict[str, str], company: str, role: str, draft: str, critique: str) -> str:
+def polisher_prompt(k: dict[str, str], company: str, role: str, draft: str, critique: str, posting: str) -> str:
     return f"""You are polishing Ting Geidel's cover letter to its final form.
 
 Voice principles:
@@ -171,6 +181,12 @@ Resume (ground truth):
 <resume>
 {k['resume']}
 </resume>
+
+Original job posting (ground truth for any company-specific claim):
+
+<jd>
+{posting}
+</jd>
 
 Target: {role} at {company}.
 
@@ -187,6 +203,13 @@ Critique to address:
 </critique>
 
 Produce the final cover letter. Address every PRIORITY FIX. Keep what was working. Do not introduce new AI-tells while fixing old ones. Stay within 280-350 words.
+
+CRITICAL: You may NOT introduce any new specific claim about {company} that isn't already grounded in the JD text or in <resume>. If the critique tells you to "find a real signal" or "reference something specific about the company," do not invent a blog post, engineering write-up, customer name, product feature, executive quote, or value statement. Instead, anchor paragraph 3 in:
+- the company's own "About" description from the JD,
+- a specific JD-stated responsibility you can match to <resume>,
+- or a shorter paragraph that uses only JD-internal material.
+
+A shorter, honest paragraph 3 is strictly better than a longer paragraph 3 that fabricates company-specific detail. Fabricated specifics end candidacies in interview.
 
 Output the letter only — no header, no signature, no commentary. No salutation; start with the first paragraph.
 """
@@ -215,14 +238,14 @@ def run(posting_path: str) -> None:
     print("Critique pass (checking voice, fabrication, JD coverage)…", file=sys.stderr)
     critique = call_claude(
         client,
-        auditor_prompt(knowledge, company, role, draft),
+        auditor_prompt(knowledge, company, role, draft, posting),
         "Produce the critique now, following the numbered structure.",
     )
 
     print("Polishing…", file=sys.stderr)
     final = call_claude(
         client,
-        polisher_prompt(knowledge, company, role, draft, critique),
+        polisher_prompt(knowledge, company, role, draft, critique, posting),
         "Produce the final cover letter now.",
     )
 

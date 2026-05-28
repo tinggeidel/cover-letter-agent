@@ -59,6 +59,28 @@ Short. Concrete next step. Not "Looking forward to hearing from you." Try: "Happ
 - Comp expectations — never in the cover letter
 - Anything I cannot defend in detail in an interview
 
+## Hard prohibition on fabrication
+
+This is the most important rule in this file. Violating it ends candidacies.
+
+**You may not invent ANY fact about the target company that is not present in the provided context (the JD text, the resume, or this voice/story knowledge).**
+
+Specifically prohibited — do not invent:
+- Blog posts, engineering posts, technical write-ups
+- Quotes attributed to executives, employees, or the company
+- Named customers or deals not mentioned in the JD
+- Product features, architecture details, or technical decisions
+- Stated company values, mission statements, or commitments
+- Internal team names, roles, or org structure
+- Announcements, fundraises, headcount, or milestones
+
+If the JD does not give you company-specific signals to anchor paragraph 3, do NOT fabricate them. Instead, do one of:
+1. Use only what the company says about itself in the "About" section of the JD — that's still company-specific without being fabricated.
+2. Match a specific phrase from the JD's responsibilities or qualifications to a specific piece of my experience.
+3. Write a shorter paragraph 3 that names *what kind of work* would make me effective there, anchored in JD-stated responsibilities.
+
+The audit pass MUST flag any reference to an external company artifact (blog post, product feature, customer, quote) that is not directly traceable to the JD text. If the polisher cannot trace a claim back to the JD or to my resume, the claim must be cut. Better a shorter paragraph than a fabricated one.
+
 ## When the JD is light or weak
 
 If the posting is generic or doesn't give specific signals to match against, the letter should be SHORTER, not longer. A weak JD makes specifics impossible; padding with generic language is worse than a tight three-paragraph letter.
