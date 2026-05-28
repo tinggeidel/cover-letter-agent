@@ -39,7 +39,8 @@ pip install -r requirements.txt
 
 # 2. Add your Anthropic API key
 cp .env.example .env
-# edit .env, paste in your key from console.anthropic.com
+# Open .env in any text editor and paste in your key from
+# https://console.anthropic.com (never commit .env to git).
 ```
 
 ## Usage
