@@ -6,8 +6,9 @@ Use this as ground truth when writing cover letters. Do not fabricate claims bey
 
 - **Name:** Ting Geidel
 - **Location:** Saint Louis, MO (open to remote)
+- **Phone:** 314.827.8088
 - **Email:** tinggeidel@gmail.com
-- **LinkedIn:** linkedin.com/in/ting-geidel-367654313
+- **LinkedIn:** linkedin.com/in/tinggeidel
 - **GitHub:** github.com/tinggeidel
 
 ## Positioning
@@ -46,12 +47,12 @@ Refurbished consumer-electronics e-commerce startup, Saint Louis, MO.
 - Executive support to three leaders simultaneously — calendars, travel, inbox triage, leadership meeting prep, supplier coordination, internal trackers.
 - **Drove the company's first AI adoption initiative — in 2022, before ChatGPT was a household tool.** Rolled out Otter.ai for meeting capture, introduced LLM-assisted drafting for executive correspondence, and trained the team on prompt patterns that converted hours of email and recap work into minutes. Earned a seat in customer-strategy and process-improvement conversations normally reserved for senior staff.
 
-## Selected Project — Flux
+## Selected Project — Wren (2026 to present)
 
-An AI coach for women's training, nutrition, and overall health. Solo-built, currently in user testing.
+Cycle-aware training and nutrition app for women. Solo-built. Working prototype in active user testing.
 
-- Building Flux end-to-end as a one-person founder. Most women stitch together MyFitnessPal + a workout-plan app + Flo + whatever-tracks-habits — four apps, four subscriptions, none of which talk to each other. Flux is one LLM-powered Coach that remembers you, learns your body across training, nutrition, sleep, and cycle, and holds you accountable from one place. React Native, working prototype in active user testing.
-- Made the product calls most apps skip: eating-disorder safety baked into every coaching interaction, honest food estimation instead of falsely precise calorie numbers. Built an automated safety review that runs on every code change before it merges.
+- Building Wren end-to-end as a one-person founder. Most women piece together a four-app, four-subscription stack (nutrition, workouts, cycle tracking, habits), none of which talk to each other. Wren is one LLM-powered Coach that remembers you, learns your body across training, nutrition, and cycle, and holds you accountable from one place. React Native.
+- Made the product calls most apps in this space skip: eating-disorder safety baked into every coaching interaction, honest food estimation instead of falsely precise calorie counts, and an automated safety review that runs on every code change before it merges.
 
 ## Education
 

@@ -8,7 +8,7 @@ This file gives the agent the *story* behind the resume — the through-line tha
 - Discovered I was extraordinarily good at the operations side of business — anticipating leadership's needs, building the tracking systems that kept commitments visible, drafting executive communications. The role expanded; I started getting invited into customer strategy and process improvement conversations normally reserved for senior staff.
 - In 2022 — before ChatGPT was a household tool — I drove Plug Tech's first AI adoption initiative. Otter.ai for meeting capture, LLM-assisted drafting for executive correspondence, prompt-pattern training for the team. This is where the AI-as-leverage thesis I now build on started.
 - Moved to Alpha Zero Global Logistics in October 2024 as EA. Promoted to Chief of Staff in August 2025. CEO operates part-time; I run as the #2 across strategy, finance, AI infrastructure, and people. CEO has offered to expand my role further. I'm currently operating closer to a VP scope than a CoS scope.
-- Started building Flux in 2025 — my first solo end-to-end consumer product. React Native, Claude-powered Coach. The point isn't the app itself; it's proving I can architect, ship, and make hard product calls without an engineering team.
+- Started building Wren in 2026, my first solo end-to-end consumer product. React Native, Claude-powered Coach. The point isn't the app itself; it's proving I can architect, ship, and make hard product calls without an engineering team.
 
 ## The through-line
 

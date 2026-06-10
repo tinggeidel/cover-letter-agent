@@ -1,6 +1,6 @@
 # cover-letter-agent
 
-A small CLI tool that turns a job posting into a tailored cover letter, using the same three-pass agent pattern I designed for [Flux](https://github.com/tinggeidel) — implementer, auditor, polisher. Built because writing 30 cover letters by hand drifts toward generic; a well-tuned agent keeps every letter at the same bar.
+A small CLI tool that turns a job posting into a tailored cover letter, using the same three-pass agent pattern I designed for [Wren](https://github.com/tinggeidel) — implementer, auditor, polisher. Built because writing 30 cover letters by hand drifts toward generic; a well-tuned agent keeps every letter at the same bar.
 
 ## How it works
 
